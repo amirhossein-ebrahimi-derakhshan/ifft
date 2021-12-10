@@ -31,14 +31,14 @@ begin
 		process(clk)
 		begin
 				if(rising_edge(clk))then
-						int_sig1_i  <= resize(in1(3 downto 0),6) + signed(in9(3 downto 0));
-						int_sig1_r  <= resize(in1(7 downto 4),6) + signed(in9(7 downto 4));
-						int_sig2_i  <= resize(in1(3 downto 0),6) - signed(in9(3 downto 0));
-						int_sig2_r  <= resize(in1(7 downto 4),6) - signed(in9(7 downto 4));
-						int_sig3_i  <= resize(in5(3 downto 0),6) + signed(in13(3 downto 0));
-						int_sig3_r  <= resize(in5(7 downto 4),6) + signed(in13(7 downto 4));
-						int_sig4_i  <= resize(in5(3 downto 0),6) - signed(in13(3 downto 0));
-						int_sig4_r  <= resize(in5(7 downto 4),6) - signed(in13(7 downto 4));
+						int_sig1_i  <= resize(in1(3 downto 0),6) + signed(in3(3 downto 0));
+						int_sig1_r  <= resize(in1(7 downto 4),6) + signed(in3(7 downto 4));
+						int_sig2_i  <= resize(in1(3 downto 0),6) - signed(in3(3 downto 0));
+						int_sig2_r  <= resize(in1(7 downto 4),6) - signed(in3(7 downto 4));
+						int_sig3_i  <= resize(in2(3 downto 0),6) + signed(in4(3 downto 0));
+						int_sig3_r  <= resize(in2(7 downto 4),6) + signed(in4(7 downto 4));
+						int_sig4_i  <= resize(in2(3 downto 0),6) - signed(in4(3 downto 0));
+						int_sig4_r  <= resize(in2(7 downto 4),6) - signed(in4(7 downto 4));
 						
 						
 						

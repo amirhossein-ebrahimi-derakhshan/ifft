@@ -3,9 +3,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 
 entity fft16 is
-    Port ( Clk   : in STD_LOGIC;
-			  infft   : in   signed(7 downto 0);
-			  outfft   : out   signed(15 downto 0));
+    Port ( Clk      : in    STD_LOGIC;
+			  infft    : in    signed(7 downto 0);
+			  outfft   : out   signed(15 downto 0);
+			  counter_num  : out   unsigned(3 downto 0));
 			  
 end fft16;
 
@@ -53,6 +54,7 @@ variable address : integer;
 		begin
 			if (rising_edge(Clk)) then
 					address    := to_integer(unsigned(counter4b));
+					counter_num <= counter4b;
 					s_in(address) <= infft;
 					outfft <= s_out(address);
 					counter4b <= counter4b+1;
@@ -64,10 +66,6 @@ variable address : integer;
 						enable <= '0';
 					end if;
 				
-			end if;
-		
-		
-			if (rising_edge(Clk)) then
 					if (enable = '1') then
 					
 					s_out(0)(7 downto 0)	  <= resize(s_out1(0)(5 downto 0),8)  + s_out1(1)(5 downto 0)  + s_out1(2)(5 downto 0)  + s_out1(3)(5 downto 0);
